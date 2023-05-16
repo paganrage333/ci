@@ -152,15 +152,15 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: #000;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    background: linear-gradient(
+      rgb(38, 38, 173), rgb(215, 14, 14));
   }
   
   .welcome-section > p {
     font-size: 3rem;
     font-weight: 200;
     font-style: italic;
-    color: var(--main-red);
+    color: var(--main-white);
   }
   
   /* Projects section */
@@ -274,27 +274,82 @@
     text-align: center;
     padding: 10rem 2rem;
     background: linear-gradient(
-      rgb(144, 21, 21), rgb(16, 16, 131)
-    );
-    color: #be3144;
+      rgb(38, 38, 173), rgb(215, 14, 14));
+    color: #f1f1f1;
+  }
+
+  .artists-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid var(--main-white);
   }
 
   .artists-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
     grid-gap: 4rem;
     width: 100%;
-    max-width: 280px;
+    /* max-width: 280px; */
     margin: 0 auto;
     margin-bottom: 6rem;
   }
 
   .artist {
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* background: rgba(255, 255, 255, 0.5); */
+    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
     border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .artist-title {
+    font-size: 1.6rem;
+    padding: 2rem .4rem;
+  }
+
+  .artist-title:hover {
+    /* color: #9dd6ff; */
+    text-decoration: underline;
+    transition: 0.3s ease-in-out;
+  }
+
+  .artist.mom-jeans {
+    grid-column: 1;
+  }
+
+
+  @media screen and (max-width: 1200px) {
+    .artists-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .artists-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .artists-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .artists-grid {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
  
+  /* Merch Section */
+
+  .merch-section {
+    background: linear-gradient(
+      rgb(215, 14, 14), rgb(38, 38, 173))
+  }
 
   /* Contact section */
   
@@ -307,7 +362,8 @@
     width: 100%;
     height: 80vh;
     padding: 0 2rem;
-    background: var(--main-gray);
+    background: linear-gradient(
+      rgb(38, 38, 173), rgb(215, 14, 14));
   }
   
   .contact-section-header > h2 {
